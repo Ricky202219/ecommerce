@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+<!-- cargando static -->
+{% load static %}
+<!-- haciendo el titulo dinamico -->
+{% block title %} Portal Pago {% endblock %}
+<!--  -->
+{% block content %}
+<!-- aqui va el contenido  -->
+<div class="mb-5 mt-5 ">
+    <!--<div class="d-flex justify-content-between fs-3 mb-3 text-secondary border border-1 border-secondary">
+        <div style="background-color: #0a59ae; width: 33.5%;">
+            <div class="col-3 text-center w-100 border border-3 border-start-0 border-top-0 border-bottom-0 border-secondary"
+                style="background-color: #fff;border-radius: 0px 20px 20px 0px;"><i
+                    class="bi bi-check-circle text-success me-2 "></i>Carro de compras</div>
+        </div>
+        <div class="text-white col-3 text-center border border-3 border-start-0 border-top-0 border-bottom-0 border-secondary"
+            style="background-color: #0a59ae;width: 33.5%;border-radius: 0px 20px 20px 0px;">
+            <i class="bi bi-2-circle me-2"></i>Despacho</div>
+        <div class="col-3 text-center " style="width: 33.5%;"><i
+                class="bi bi-3-circle me-2"></i>Método de Pago</div>
+    </div>-->
+    <div class="d-flex align-items-center mb-4 container">
+        <p class="fs-5 text-black fw-semibold">Carro de Compras</p>
+        <p class="bi bi-caret-right-fill me-5 ms-5" style="font-size: 12.5px;"></p>
+        <p class="fs-5 text-danger fw-semibold">Despacho</p>
+        <p class="bi bi-caret-right-fill me-5 ms-5 text-secondary" style="font-size: 12.5px;"></p>
+        <p class="fs-5 text-secondary">Método de Pago</p>
+    </div>
+    <div class="d-flex container">
+        <div style="width: 65%;">
+            <p class="ps-3 m-auto fs-3 fw-semibold"
+                style="height: 70px;line-height: 70px;width: 95%;background-color: rgb(235, 235, 235);">Despacho</p>
+            {% if user.is_authenticated %}
+            <form action="" class="container p-4 ">
+                <div class="row w-100 m-auto">
+                    <label class="lab" for="nombre">Nombre Completo <span>*</span> </label>
+                    <input class="ps-2 inpt mb-3" type="text" name="nombre" id="nombre" value="{{ user.nombre_completo }}">
+                </div>
+                <div class="row w-100 m-auto">
+                    <label class="lab" for="direccion">Dirección <span>*</span> </label>
+                    <input class="ps-2 inpt mb-3" type="text" name="direccion" id="direccion" value="{{user.direccion_envio}}">
+                </div>
+                <div class="row justify-content-between ">
+                    <div class="row w-50 m-auto ">
+                        <label class="lab" for="region">Región <span>*</span> </label>
+                        <input class="ps-2 inpt mb-3" type="text" name="region" id="region" value="{{user.region}}">
+                    </div>
+                    <div class="row w-50 m-auto ">
+                        <label class="lab" for="ciudad">Ciudad <span>*</span> </label>
+                        <input class="ps-2 inpt mb-3" type="text" name="ciudad" id="ciudad" value="{{user.ciudad}}">
+                    </div>
+                </div>
+                <div class="row justify-content-between ">
+                    <div class="row w-50 m-auto ">
+                        <label class="lab" for="telefono">N° Celular <span>*</span> </label>
+                        <input class="ps-2 inpt mb-3" name="telefono" id="telefono" type="text" maxlength="9" value="{{user.telefono_contacto}}">
+                    </div>
+                    <div class="row w-50 m-auto ">
+                        <label class="lab" for="nombre">Correo <span>*</span> </label>
+                        <input class="ps-2 inpt mb-3" type="email" name="correo" id="correo" value="{{ user.correo_electronico }}">
+                    </div>
+                </div>
+            </form>
+            {% else %}
+            <form action="" class="container p-4 ">
+                <div class="row w-100 m-auto">
+                    <label class="lab" for="nombre">Nombre Completo <span>*</span> </label>
+                    <input class="ps-2 inpt mb-3" type="text" name="nombre" id="nombre">
+                </div>
+                <div class="row w-100 m-auto">
+                    <label class="lab" for="direccion">Dirección <span>*</span> </label>
+                    <input class="ps-2 inpt mb-3" type="text" name="direccion" id="direccion">
+                </div>
+                <div class="row justify-content-between ">
+                    <div class="row w-50 m-auto ">
+                        <label class="lab" for="region">Región <span>*</span> </label>
+                        <input class="ps-2 inpt mb-3" type="text" name="region" id="region">
+                    </div>
+                    <div class="row w-50 m-auto ">
+                        <label class="lab" for="ciudad">Ciudad <span>*</span> </label>
+                        <input class="ps-2 inpt mb-3" type="text" name="ciudad" id="ciudad">
+                    </div>
+                </div>
+                <div class="row justify-content-between ">
+                    <div class="row w-50 m-auto ">
+                        <label class="lab" for="telefono">N° Celular <span>*</span> </label>
+                        <input class="ps-2 inpt mb-3" name="telefono" id="telefono" type="text" maxlength="9"
+                            placeholder="911111111">
+                    </div>
+                    <div class="row w-50 m-auto ">
+                        <label class="lab" for="nombre">Correo <span>*</span> </label>
+                        <input class="ps-2 inpt mb-3" type="email" name="correo" id="correo" value="{{ user. }}">
+                    </div>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+        <div class="col-12 col-md-4">
+            <p class="bg-black text-white ps-3 m-auto fs-3 fw-semibold p-4">Resumen del Pedido</p>
+            <div class="d-flex border-2 border-bottom border-secondary-subtle pt-3">
+                <p class="w-25 ps-3">SubTotal</p>
+                <div class="d-flex w-75 ps-5">$ <p id="sub_total" class="ps-2">{{ total_carrito }}</p>
+                </div>
+            </div>
+            <div class="d-flex border-2 border-bottom border-secondary-subtle pt-3">
+                <p class="w-25 ps-3">Despacho</p>
+                <div class="d-flex w-75 ps-5">$ <p id="valor_despacho" class="ps-2">3500</p>
+                </div>
+            </div>
+            <div class="d-flex border-2 border-bottom border-black pt-3">
+                <p class="w-25 fw-bold ps-3">Total</p>
+                <div class="d-flex w-75 ps-5 fw-bold">$ <p id="total_resumen" class="ps-2"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between mb-5 mt-4">
+        <a href="/carro" class="btn fs-5"><i class="bi bi-arrow-left-circle me-2"></i>Carro de Compras</a>
+        <a href="/pago" class="btn btn-success fs-5">Método de Pago <i class="bi bi-chevron-right ms-2"></i></a>
+    </div>
+
+</div>
+{% endblock %}

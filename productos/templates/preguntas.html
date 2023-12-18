@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+<!-- cargando static -->
+{% load static %}
+<!-- haciendo el titulo dinamico -->
+{% block title %} Servicio al Cliente - Tienda Online {% endblock %}
+<!--  -->
+{% block content %}
+<!-- aqui va el contenido  -->
+<section class="p-4 mb-4">
+    <h1>Preguntas Frecuentes</h1>
+    <div class="pt-3 row g-1" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="collapsed w-100 text-start text-light btn bg-secondary" data-bs-toggle="collapse"
+                    data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                    1. ¿Cuánto se demora el envío?
+                </button>
+            </h2>
+            <div id="collapse1" class="accordion-collapse collapse show p-4" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>Los envíos toman entre 4 a 5 días hábiles en la Región Metropolitana y dos días extra en
+                        otras regiones del país. Estos tiempos son estimados y pueden variar por contingencia o
+                        disponibilidad de las empresas de despacho.</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="collapsed w-100 text-start text-light btn bg-secondary" data-bs-toggle="collapse"
+                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                    2. Comunicaciones
+                </button>
+            </h2>
+            <div id="collapse2" class="accordion-collapse collapse p-4" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>El costo de envío depende de la comuna, el precio base es $3.990 para la mayoría de las
+                        comunas de la Región Bio-Bio, luego varía según la distancia. De todas maneras el
+                        envío es gratis en pedidos de más de $29.990</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="collapsed w-100 text-start text-light btn bg-secondary" data-bs-toggle="collapse"
+                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                    3. Hice mi pedido, ¿cuándo llega?
+                </button>
+            </h2>
+            <div id="collapse3" class="accordion-collapse collapse p-4" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>La gestión de los pedidos se hace solo los días hábiles AM. Esto quiere decir que: si tu
+                        compra fue realizada un Viernes PM, Sábado o Domingo, desde el lunes en adelante podrás
+                        recibir tu numero de seguimiento. Si tienes dudas o consultas con tu pedido, contáctanos a
+                        ventas@ModaEEshop.cl.</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="collapsed w-100 text-start text-light btn bg-secondary" data-bs-toggle="collapse"
+                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    4. Hice una compra es ModaEE.com y necesito saber en que estado está mi pedido.
+                </button>
+            </h2>
+            <div id="collapse4" class="accordion-collapse collapse p-4" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>Lo primero que recibirás será una copia de tu pedido indicando que fue recibido por nuestro
+                        equipo. Esto confirma que la compra se hizo de manera correcta. Si no lo recibes, puede
+                        haber
+                        sido un error con tu banco y la compra no será cobrada en tu cuenta ( si se cobró pero no se
+                        registró, el reverso de ese pago depende de tu banco y puede tomar más de 24 horas hábiles),
+                        asimismo nosotros no recibiremos el pedido para su gestión.</p>
+
+                    <p>Si recibiste correctamente tu pedido, durante las siguientes 48 horas hábiles te enviaremos,
+                        a
+                        través de nuestra empresa de despachos, el número de seguimiento de tu pedido. Por favor, no
+                        nos
+                        contactes antes de 5 días hábiles desde que hiciste tu pedido, ya que tenemos retrasos fuera
+                        de
+                        lo habitual en los envíos por lo que pronto recibirás tu número de seguimiento.</p>
+
+                    <p>Solo en caso que alguno de estos procesos no se haya cumplido por favor contáctanos a
+                        ventas@ModaEEshop.cl indicando Nombre del Comprador, fecha de compra o número de pedido y te
+                        contactaremos a la brevedad.</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item mt-2">
+            <h3 class="accordion-header">Otras dudas</h3>
+            <p>Favor escribir a ventas@ModaEEshop.cl y nos contactaremos contigo a la brevedad posible.</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

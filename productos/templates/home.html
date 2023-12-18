@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+<!-- cargando static -->
+{% load static %}
+<!-- haciendo el titulo dinamico -->
+{% block title %} ModaEE.com - Tienda Online {% endblock %}
+<!--  -->
+{% block content %}
+<!-- aqui va el contenido  -->
+<div id="carouselExampleIndicators" class="carousel carousel-dark slide">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <picture class="carousel-item active mb-5">
+            <a href="/productos"><img style="width: 100%;" src="https://res.cloudinary.com/duwrrvmki/image/upload/v1698435543/Moda_Hombre_B_df18jl.png" alt="">
+            </a>
+        </picture>
+        <picture class="carousel-item mb-5">
+            <a href=""><img style="width: 100%;" src="https://res.cloudinary.com/duwrrvmki/image/upload/v1698435420/Moda_Mujer_B_i13bfo.png" alt="">
+            </a>
+        </picture>
+        <picture class="carousel-item mb-5">
+            <a href=""><img style="width: 100%;" src="https://res.cloudinary.com/duwrrvmki/image/upload/v1698435770/Moda_Infantil_B_dixdbe.png" alt="">
+            </a>
+        </picture>
+    </div>
+    <button class="carousel-control-prev" style="width: 3rem;" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-black" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" style="width: 3rem;" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-black" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="text-center div-logos">
+    <p class="fs-3">Tenemos las Mejores Marcas</p>
+    <div class="d-flex justify-content-center">
+        <div>
+            <a href=""><img class="logos" src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339974/adidas_p6mcwm.png" alt=""></a>
+        </div>
+        <div>
+            <a href=""><img class="logos" src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339975/levis_mud2ay.png" alt=""></a>
+        </div>
+        <div>
+            <a href=""><img class="logos" src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339981/nike_nrafys.png" alt=""></a>
+        </div>
+        <div>
+            <a href=""><img class="logos" src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339989/puma_inenek.png" alt=""></a>
+        </div>
+        <div>
+            <a href=""><img class="logos" src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339990/thenorthface_slff2b.png" alt=""></a>
+        </div>
+        <div>
+            <a href=""><img class="logos" src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339972/converse_pff4dx.png" alt=""></a>
+        </div>
+        <div>
+            <a href=""><img class="logos" src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339973/fila_jbi8lz.png" alt=""></a>
+        </div>
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+    <img src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339974/fondo_adidas_rjpqou.png" alt="" class="ofertas">
+</div>
+<div class="row row-cols-2 row-cols-md-4 m-3 g-4 mb-5">
+    <div class="col">
+        <img src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339982/oferta_polera_adidas_nk7zkk.png" alt="" class="w-100">
+    </div>
+    <div class="col">
+        <img src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339982/oferta_poleron_adidas_r89loa.png" alt="" class="w-100">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="col">
+        <img src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339981/oferta_pantalon_adidas_gl6ebc.png" alt="" class="w-100">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="col">
+        <img src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339989/oferta_short_adidas_vr9auu.png" alt="" class="w-100">
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+    <img src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339974/fondo_levis_ayzjb8.png" alt="" class="ofertas">
+</div>
+<div class="row row-cols-2 row-cols-md-4 m-3 g-4 mb-5">
+    <div class="col text-center">
+        <img src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339985/oferta_polera_levis_gminvl.png" alt="" class="w-100">
+    </div>
+    <div class="col">
+        <img src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339988/oferta_poleron_levis_xdhxht.png" alt="" class="w-100">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="col">
+        <img src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339982/oferta_jeans_levis_xuu51o.png" alt="" class="w-100">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="col">
+        <img src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339989/oferta_short_levis_hitlon.png" alt="" class="w-100">
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<div class="text-center mb-5">
+    <h1>CATEGORIAS</h1>
+    <div class="d-flex justify-content-center">
+        <div>
+            <div class="categoria-div">
+                <a href=""><img class="categoria-img" src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697339976/categoria_hombre_rdsnla.png" alt=""></a>
+            </div>
+            <h4>Hombre</h4>
+        </div>
+        <div>
+            <div class="categoria-div">
+                <a href=""><img class="categoria-img" src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697341792/categoria_mujer_pbknj1.png" alt=""></a>
+            </div>
+            <h4>Mujer</h4>
+        </div>
+        <div>
+            <div class="categoria-div">
+                <a href=""><img class="categoria-img" src="https://res.cloudinary.com/duwrrvmki/image/upload/v1697341795/categoria_infantil_czckqb.png" alt=""></a>
+            </div>
+            <h4>Infantil</h4>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+<!-- cargando static -->
+{% load static %}
+<!-- haciendo el titulo dinamico -->
+{% block title %} Registro - Tienda Online {% endblock %}
+<!--  -->
+{% block content %}
+<!-- aqui va el contenido  -->
+<div class="container mt-5">
+    <h1 class="mb-3">¡Hola Bienvenido a ModaEE!</h1>
+    <p>Te invitamos a inscribirte para que puedas recibir los mejores descuentos, información de actividades y
+        promociones exclusivas para ti.</p>
+    <div class="border border-1 border-black mt-5 mb-5">
+        <form method="post">
+            {% csrf_token %}
+            <div class="w-75 m-auto mt-5">
+                <h3 class="text-center mb-4 ">Regístrate</h3>
+                <div class="row justify-content-between ">
+                    <div class="row w-50 m-auto ">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                    </div>
+                    <div class="row w-50 m-auto ">
+                        {{ form.nombre_completo.label_tag }}
+                        {{ form.nombre_completo }}
+                    </div>
+                </div>
+                <div class="row justify-content-between ">
+                    <div class="row w-50 m-auto ">
+                        {{ form.telefono_contacto.label_tag }}
+                        {{ form.telefono_contacto }}
+                    </div>
+                    <div class="row w-50 m-auto ">
+                        {{ form.correo_electronico.label_tag }}
+                        {{ form.correo_electronico }}
+                    </div>
+                </div>
+                {{ form.direccion_envio.label_tag }}
+                {{ form.direccion_envio }}
+                <div class="row justify-content-between ">
+                    <div class="row w-50 m-auto ">
+                        {{ form.region.label_tag }}
+                        {{ form.region }}
+                    </div>
+                    <div class="row w-50 m-auto ">
+                        {{ form.ciudad.label_tag }}
+                        {{ form.ciudad }}
+                    </div>
+                </div>
+                <label for="id_password1">Contraseña:</label>
+                <input type="password" name="password1" class="ps-2 form-control mb-3 border-black" id="id_password1">
+                <label for="id_password2">Confirmar Contraseña:</label>
+                <input type="password" name="password2" class="ps-2 form-control mb-3 border-black" id="id_password2">
+                <input class="btn btn-dark bg-black w-100 mt-2 mb-5" type="submit" value="Registrar">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

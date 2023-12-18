@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+<!-- cargando static -->
+{% load static %}
+<!-- haciendo el titulo dinamico -->
+{% block title %} Servicio al Cliente - Tienda Online{% endblock %}
+<!--  -->
+{% block content %}
+<!-- aqui va el contenido  -->
+<section class="p-4 mb-4">
+    <h1>Condiciones de Despacho</h1>
+    <div class="pt-3 row g-1" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="collapsed w-100 text-start text-light btn bg-secondary" data-bs-toggle="collapse"
+                    data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                    1. Condiciones generales de despacho de productos
+                </button>
+            </h2>
+            <div id="collapse1" class="accordion-collapse collapse show p-4" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>Los productos comprados a través del sitio www.ModaEE.com serán enviados al domicilio
+                        indicado por el comprador al momento de registrarse como usuario del mencionado sitio. Es
+                        responsabilidad del cliente proveer una dirección en la que haya gente para recibir el o los
+                        productos en el horario de entrega entre 9:00 y 19:00. En caso de que la dirección de despacho
+                        se trate de un edificio u oficina será necesario especificar al momento de la compra, en la
+                        sección comentarios, si el pedido se dejará con el conserje o en la unidad de recepción
+                        dependiendo el caso.</p>
+                    <p>La persona que reciba el (los) producto (s) debe ser mayor de edad y exhibir su cédula nacional
+                        de identidad. En caso de no retirar el pedido, éste volverá a nuestras bodegas, y el costo de
+                        despacho deberá ser incurrido nuevamente por el cliente.</p>
+                    <p>Las demoras causadas por la ausencia del cliente al momento de la entrega: información de
+                        registro incorrecta y el cambio de domicilio, no son responsabilidad de Moda Estilo Elegante.
+                        Cualquiera de estos casos son responsabilidad del cliente y éste deberá pagar el despacho otra
+                        vez si es necesario.</p>
+                    <p>La persona que reciba el (los) producto (s) deberá revisarlo (s) detalladamente. En caso de no
+                        tener reparos, deberá firmar el comprobante de recepción conforme, entendiéndose esta firma como
+                        señal suficiente de recepción conforme. Recibido el (los) artículo (s) sin observaciones, se
+                        entenderá que éste (éstos) ha (n) llegado al domicilio del usuario en perfectas condiciones y a
+                        su entera satisfacción. </p>
+                    <p>El pedido será enviado en una caja con los sellos de seguridad respectivos. En caso que la caja
+                        y/o sobres presenten señales de haber sido abiertos, el cliente no debe aceptar el despacho,
+                        señalando en forma expresa en la documentación que se le presente el motivo del rechazo. Acto
+                        seguido, el cliente deberá informar lo sucedido mediante llamado telefónico al Call Center de
+                        Comercial ModaEE S.A. (fono +562 2583 0302) o a través de un correo electrónico dirigido
+                        a “compraonline@ModaEE.com”, explicando su caso. </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="collapsed w-100 text-start text-light btn bg-secondary" data-bs-toggle="collapse"
+                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                    2. Tamaños para despacho
+                </button>
+            </h2>
+            <div id="collapse2" class="accordion-collapse collapse p-4" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>Cada uno de los pedidos tendrá 4 tamaños posibles: </p>
+                    <p>• Pequeño: Rango de peso de 0 – 15 Kilos equivalentes (*) <br><br>
+
+                        • Mediano: Rango de peso de 15.1 – 20 kilos equivalentes (*) <br><br>
+
+                        • Largo: Rango de peso de 20.1 – 25 kilos equivalentes (*) <br><br>
+
+                        • Extra largo: Sobre 25 kilos equivalentes (*) <br><br>
+
+                        (*) Kilo equivalente = Tamaño de la caja que más se ajuste al pedido (Largo x Ancho x Alto)/4000
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="collapsed w-100 text-start text-light btn bg-secondary" data-bs-toggle="collapse"
+                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                    3. Seguimiento de Pedido
+                </button>
+            </h2>
+            <div id="collapse3" class="accordion-collapse collapse p-4" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>Para hacer seguimiento a los despachos, puede revisar nuestra página en la sección de “sigue tu
+                        compra” con el número de orden, de no tenerlo puedes solicitarlo al correo
+                        compraonline@ModaEE.com.</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="collapsed w-100 text-start text-light btn bg-secondary" data-bs-toggle="collapse"
+                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    4. En caso de no recibir el pedido
+                </button>
+            </h2>
+            <div id="collapse4" class="accordion-collapse collapse p-4" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <p>En caso de no recibir el pedido, el cliente deberá contactarse con nuestro Servicio al Cliente,
+                        enviando un correo electrónico a la casilla “compraonline@fashionspark.com”. <br><br>
+                        Tras verificar lo ocurrido, nuestra empresa se comunicará con usted para dar una respuesta.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="collapsed w-100 text-start text-light btn bg-secondary" data-bs-toggle="collapse"
+                        data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        5. Enlaces a Terceros
+                    </button>
+                </h2>
+                <div id="collapse5" class="accordion-collapse collapse p-4" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>Este sitio web pudiera contener en laces a otros sitios que pudieran ser de su interés. Una
+                            vez que usted de clic en estos enlaces y abandone nuestra página, ya no tenemos control
+                            sobre al sitio al que es redirigido y por lo tanto no somos responsables de los términos o
+                            privacidad ni de la protección de sus datos en esos otros sitios terceros. Dichos sitios
+                            están sujetos a sus propias políticas de privacidad por lo cual es recomendable que los
+                            consulte para confirmar que usted está de acuerdo con estas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="collapsed w-100 text-start text-light btn bg-secondary" data-bs-toggle="collapse"
+                        data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                        6. Tarifas y Tiempos de Despacho por Comunas  
+                    </button>
+                </h2>
+                <div id="collapse6" class="accordion-collapse collapse p-4" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>Ver lista completa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

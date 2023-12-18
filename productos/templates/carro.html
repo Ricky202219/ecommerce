@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+<!-- cargando static -->
+{% load static %}
+<!-- haciendo el titulo dinamico -->
+{% block title %} Portal Pago {% endblock %}
+<!--  -->
+{% block content %}
+<!-- aqui va el contenido  -->
+<div class="mb-5 mt-5">
+    <div class="d-flex align-items-center mb-4 container">
+        <p class="fs-5 text-danger fw-semibold">Carro de Compras</p>
+        <p class="bi bi-caret-right-fill me-5 ms-5 text-secondary" style="font-size: 12.5px;"></p>
+        <p class="fs-5 text-secondary">Despacho</p>
+        <p class="bi bi-caret-right-fill me-5 ms-5 text-secondary" style="font-size: 12.5px;"></p>
+        <p class="fs-5 text-secondary">Método de Pago</p>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2">
+        {% if carrito.productos.exists %}
+        <div class="col-12 col-md-8 container-fluid p-4">
+            <table class="w-100">
+                <thead class="border-bottom border-black text-secondary">
+                    <tr class="fw-semibold text-black">
+                        <th class="pb-3">Producto</th>
+                        <th class="text-center pb-3">Precio</th>
+                        <th class="text-center pb-3">Cantidad</th>
+                        <th class="text-center pb-3">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in carrito.productos.all %}
+                    <tr class="border-bottom border-secondary-subtle align-items-center text-black">
+                        <td style="width: 40%;">
+                            <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <img src='{{ item.imagen }}' alt=''
+                                        style='width: 74px;margin-right: 10px;margin-top: 15px;margin-bottom: 15px;'>
+                                    <p class="fw-semibold">{{ item.nombre }}</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width: 20%;">
+                            <div class='d-flex justify-content-center fw-semibold'>$<p>{{ item.precio }}</p>
+                            </div>
+                        </td>
+                        <td class="text-center fw-semibold" style="width: 20%;">
+                            {% for item_carrito in item.itemcarrito_set.all %}
+                            <p>{{ item_carrito.cantidad }}</p>
+                            {% endfor %}
+                        </td>
+                        <td style="width: 20%;">
+                            {% for item_carrito in item.itemcarrito_set.all %}
+                            <div class='d-flex justify-content-center fw-semibold'>
+                                    $<p>{{ item_carrito.subtotal }}</p>
+                            </div>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="col-12 col-md-4" style="margin-top: 64px;">
+            <p class="bg-black text-white ps-3 m-auto fs-3 fw-semibold p-4">Resumen del Pedido</p>
+            <div class="d-flex border-2 border-bottom border-secondary-subtle pt-3">
+                <p class="w-25 ps-3">SubTotal</p>
+                <div class="d-flex w-75 ps-5">$ <p id="sub_total" class="ps-2">{{ total_carrito }}</p></div>
+            </div>
+            <div class="d-flex border-2 border-bottom border-secondary-subtle pt-3">
+                <p class="w-25 ps-3">Despacho</p>
+                <div class="d-flex w-75 ps-5">$ <p id="valor_despacho" class="ps-2">3500</p></div>
+            </div>
+            <div class="d-flex border-2 border-bottom border-black pt-3">
+                <p class="w-25 fw-bold ps-3">Total</p>
+                <div class="d-flex w-75 ps-5 fw-bold">$ <p id="total_resumen" class="ps-2"></p></div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<div class="d-flex justify-content-between mb-5 mt-5">
+    <a href="/" class="btn fs-5"><i class="bi bi-arrow-left-circle me-2"></i>Segir Compando</a>
+    <a href="/despacho" class="btn btn-success fs-5">Despacho <i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+{% endblock %}

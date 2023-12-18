@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+<!-- haciendo el titulo dinamico -->
+{% block title %} Moda Hombre - Tienda Online {% endblock %}
+<!--  -->
+{% block content %}
+<!-- aqui va el contenido  -->
+<div class="row row-cols-2 w-100 justify-content-center mb-5 ">
+    <div class="col-4 row row-cols-1">
+        <div class="bg-body-secondary pb-2" style="height: fit-content;">
+            <div class="d-flex justify-content-between align-items-center ">
+                <h5 class="fw-semibold">Marcas</h5>
+                <a href="{% url 'productos' marca_seleccionada.categoria.id %}" class="text-decoration-none text-danger">Quitar filtro</a>
+            </div>
+            <div class="row">
+                {% for marca in marcas %}
+                <hr>
+                <a href="{% url 'marca' marca.id %}" class="marcas">
+                    <i class="bi bi-caret-right-fill me-1 "></i>{{marca.nombre}}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-8 row row-cols-1 row-cols-md-3">
+        {% for producto in productos %}
+        <div>
+            <a href="/producto"><img src="{{producto.imagen}}" alt="" class="w-100"></a>
+            <p class="mt-2 fw-semibold">{{producto.nombre}}</p>
+            <p class="text-danger">$ {{producto.precio}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

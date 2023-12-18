@@ -1,0 +1,66 @@
+{% if carrito.productos.exists %}
+<div class='offcanvas-body' id='contenido'>
+    <div class='d-flex justify-content-between align-items-start'>
+        <div>
+            <div class="row">
+                {% for item in carrito.productos.all %}
+                <div class="fw-medium text-black" style="
+                            border: none;
+                            border-bottom: 2px solid;
+                            border-top: 2px solid;
+                            border-color: lightgray;
+                            width: 100%;
+                            height: 50px;
+                            line-height: 50px;">
+                    {{ item.nombre }}
+                </div>
+                <div class="d-flex justify-content-around">
+                    <div>
+                        <img src='{{ item.imagen }}' alt=''
+                            style='width: 100px;margin-right: 10px;margin-top: 25px;margin-bottom: 25px;'>
+                    </div>
+                    <div class="row mt-4 ">
+                        <div class='d-flex'>
+                            <div class="me-3 text-black">Precio:</div>
+                            <div class="fw-semibold text-black">
+                                {{ item.precio }}
+                            </div>
+                        </div>
+                        <div class="d-flex mt-3">
+                            <div class="me-3 text-black">Cantidad:</div>
+                            <div class="fw-semibold ">
+                                {% for item_carrito in item.itemcarrito_set.all %}
+                                <p class="text-center fw-semibold text-black">{{ item_carrito.cantidad }}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="d-flex">
+                            <div class="me-3 text-black">Subtotal:</div>
+                            <div class="fw-semibold text-black">
+                                {% for item_carrito in item.itemcarrito_set.all %}
+                                <div class='d-flex fw-semibold text-black'>
+                                    $<p class="ms-1">{{ item_carrito.subtotal }}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class='d-flex justify-content-between pe-4 ps-4 fs-5'>
+    <p class='fw-bolder'>Total</p>
+    <p style='color: darkorange;font-weight: bold;'>${{ total_carrito }}</p>
+</div>
+<a class='btn bg-black text-white m-2' href="{% url 'carro' %}">Comprar</a>
+{% else %}
+<div class='offcanvas-body d-flex justify-content-center align-items-center' id='contenido'>
+    <div class='col-auto'>
+        <h5 class='bi bi-cart2'> Tu carro está vacio</h5>
+    </div>
+</div>
+{% endif %}

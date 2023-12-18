@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+<!-- cargando static -->
+{% load static %}
+<!-- haciendo el titulo dinamico -->
+{% block title %} Portal Pago {% endblock %}
+<!--  -->
+{% block content %}
+<!-- aqui va el contenido  -->
+
+<div class="mb-5 mt-5 container-fluid ">
+    <div class="d-flex align-items-center mb-4 container">
+        <p class="fs-5 text-black fw-semibold">Carro de Compras</p>
+        <p class="bi bi-caret-right-fill me-5 ms-5" style="font-size: 12.5px;"></p>
+        <p class="fs-5 text-black fw-semibold">Despacho</p>
+        <p class="bi bi-caret-right-fill me-5 ms-5" style="font-size: 12.5px;"></p>
+        <p class="fs-5 text-danger fw-semibold">Método de Pago</p>
+    </div>
+    <div class="d-flex container">
+        <div style="width: 65%;">
+            <p class="ps-3 m-auto fs-3 fw-semibold mb-4"
+                style="height: 70px;line-height: 70px;width: 95%;background-color: rgb(235, 235, 235);">Método de Pago
+            </p>
+            <h4 class="text-danger">Dirección de Envio</h4>
+            <div style="background-color: rgb(235, 235, 235);width: 95%;" class="m-auto mt-3">
+                <div class="d-flex pt-2">
+                    <p class="w-25 ps-3">Nombre:</p>
+                    <p class="w-75 ps-5">{{user.nombre_completo}}</p>
+                </div>
+                <div class="d-flex">
+                    <p class="w-25 ps-3">Dirección:</p>
+                    <p class="w-75 ps-5">{{user.direccion_envio}}</p>
+                </div>
+                <div class="d-flex">
+                    <p class="w-25 ps-3">Región:</p>
+                    <p class="w-75 ps-5">{{user.region}}</p>
+                </div>
+                <div class="d-flex">
+                    <p class="w-25 ps-3">Ciudad:</p>
+                    <p class="w-75 ps-5">{{user.ciudad}}</p>
+                </div>
+                <div class="d-flex">
+                    <p class="w-25 ps-3">Teléfono:</p>
+                    <p class="w-75 ps-5">{{user.telefono_contacto}}</p>
+                </div>
+                <div class="d-flex">
+                    <p class="w-25 ps-3">Correo:</p>
+                    <p class="w-75 ps-5">{{user.correo_electronico}}</p>
+                </div>
+            </div>
+            <h4 class="text-danger">Opciones de Pago</h4>
+            <form action="" class="container p-4 ">
+                <div class="d-flex">
+                    <div class="row">
+                        <div class="form-check form-check-inline me-5 ">
+                            <input class="form-check-input border-secondary" type="radio" name="inlineRadioOptions"
+                                id="inlineRadio1" value="option1">
+                            <label class="form-check-label ms-3" for="inlineRadio1">Tarjeta de Crédito</label>
+                        </div>
+                        <img src="../static/t_credito.png" alt="" style="width: 200px;">
+                    </div>
+                    <div class="row">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input border-secondary" type="radio" name="inlineRadioOptions"
+                                id="inlineRadio2" value="option2">
+                            <label class="form-check-label ms-3" for="inlineRadio2">PayPal</label>
+                        </div>
+                        <div>
+                            <img src="../static/t_paypal.png" alt="" style="width: 200px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="row w-100 m-auto mb-4 mt-5 ">
+                    <label class="lab" for="n_tarjeta">NÚMERO DE TARJETA <span>*</span> </label>
+                    <input class="ps-2 inpt mb-3" type="text" name="n_tarjeta" id="n_tarjeta">
+                </div>
+                <div class="row justify-content-between ">
+                    <div class="row w-50 m-auto ">
+                        <label class="lab" for="f_caducidad">FECHA DE CADUCIDAD <span>*</span> </label>
+                        <input class="ps-2 inpt mb-3" name="f_caducidad" id="f_caducidad" type="text" maxlength="9">
+                    </div>
+                    <div class="row w-50 m-auto ">
+                        <label class="lab" for="c_tarjeta">CÓDIGO DE TARJETA <span>*</span> </label>
+                        <input class="ps-2 inpt mb-3" type="text" name="c_tarjeta" id="c_tarjeta">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between ">
+                    <p class="w-50 ms-1 text-secondary">MM/YY</p>
+                    <p class="w-50 ms-4 text-secondary">CVC</p>
+                </div>
+            </form>
+        </div>
+        <div class="col-12 col-md-4">
+            <p class="bg-black text-white ps-3 m-auto fs-3 fw-semibold p-4">Resumen del Pedido</p>
+            <div class="d-flex border-2 border-bottom border-secondary-subtle pt-3">
+                <p class="w-25 ps-3">SubTotal</p>
+                <div class="d-flex w-75 ps-5">$ <p id="sub_total" class="ps-2">{{ total_carrito }}</p></div>
+            </div>
+            <div class="d-flex border-2 border-bottom border-secondary-subtle pt-3">
+                <p class="w-25 ps-3">Despacho</p>
+                <div class="d-flex w-75 ps-5">$ <p id="valor_despacho" class="ps-2">3500</p></div>
+            </div>
+            <div class="d-flex border-2 border-bottom border-black pt-3">
+                <p class="w-25 fw-bold ps-3">Total</p>
+                <div class="d-flex w-75 ps-5 fw-bold">$ <p id="total_resumen" class="ps-2"></p></div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between mb-5 mt-4 w-100 ">
+        <a href="/despacho" class="btn fs-5"><i class="bi bi-arrow-left-circle me-2"></i>Despacho</a>
+        <a href="{% url 'crear_pedido' %}" class="btn btn-success fs-5">Confirmar Compra<i class="bi bi-chevron-right ms-2"></i></a>
+    </div>
+
+</div>
+{% endblock %}

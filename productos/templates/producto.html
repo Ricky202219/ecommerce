@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+<!-- cargando static -->
+{% load static %}
+<!-- haciendo el titulo dinamico -->
+{% block title %} POLERA MANGA CORTA ADIDAS BRANDLOVE {% endblock %}
+<!--  -->
+{% block content %}
+<!-- aqui va el contenido  -->
+<div class="row row-cols-1 row-cols-md-2 w-100 justify-content-center w-100 m-auto mb-5 ">
+  <div class="row row-cols-1 mb-3 ">
+    <img src="{{ producto.imagen }}" alt="">
+  </div>
+  <div class="row row-cols-1" style="height: fit-content;">
+    <h2>{{ producto.nombre }}</h2>
+    <p>stock: {{ producto.stock }}</p>
+    <h4>Precio: ${{ producto.precio }}</h4>
+    <a class="btn btn-dark w-50 " href="{% url 'agregar_al_carrito' producto.id %}">Agregar al Carrito</a>
+  </div>
+</div>
+{% endblock %}
