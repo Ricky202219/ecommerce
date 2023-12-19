@@ -37,5 +37,6 @@ urlpatterns = [
     path('categoria/<int:marca_id>/', vistas.marca,name='marca'),
     path('agregar/<int:producto_id>/', vistas.agregar_al_carrito, name='agregar_al_carrito'),
     path('crear_pedido/', vistas.crear_pedido, name='crear_pedido'),
-    path('cerrar_sesion/',vistas.cerrar_sesion, name="cerrar_sesion"),    
+    path('cerrar_sesion/',vistas.cerrar_sesion, name="cerrar_sesion"),
+    path('d/',vistas.renderd)
 ]

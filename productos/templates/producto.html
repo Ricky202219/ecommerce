@@ -1,6 +1,4 @@
 {% extends 'base.html' %}
-<!-- cargando static -->
-{% load static %}
 <!-- haciendo el titulo dinamico -->
 {% block title %} POLERA MANGA CORTA ADIDAS BRANDLOVE {% endblock %}
 <!--  -->
@@ -11,10 +9,11 @@
     <img src="{{ producto.imagen }}" alt="">
   </div>
   <div class="row row-cols-1" style="height: fit-content;">
-    <h2>{{ producto.nombre }}</h2>
-    <p>stock: {{ producto.stock }}</p>
-    <h4>Precio: ${{ producto.precio }}</h4>
-    <a class="btn btn-dark w-50 " href="{% url 'agregar_al_carrito' producto.id %}">Agregar al Carrito</a>
+    <p class="mt-3 ">{% for marca in producto.marca.all %} {{ marca.nombre }} {% endfor %}</p>
+    <h2 class="mt-2 ">{{ producto.nombre }}</h2>
+    <p class="mt-3 ">stock: {{ producto.stock }}</p>
+    <h1 class="mt-3 ">Precio: ${{ producto.precio }}</h1>
+    <a class="btn btn-dark w-50 mt-3" href="{% url 'agregar_al_carrito' producto.id %}">Agregar al Carrito</a>
   </div>
 </div>
 {% endblock %}

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'productos',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'productos.context_processors.carrito',
                 'productos.context_processors.categorias',
+                'productos.context_processors.productos',
+                'productos.context_processors.marcas',
             ],
         },
     },
@@ -85,9 +88,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
         #'ENGINE': 'django.db.backends.mysql',
-        #'NAME': 'empresa',
-        #'USER': 'admin',
-        #'PASSWORD': 'admin'
+        #'NAME': 'Rickyfate$default',
+        #'USER': 'Rickyfate',
+        #'PASSWORD': 'Ricky.21',
+        #'HOST': 'Rickyfate.mysql.pythonanywhere-services.com',
+        #'PORT': '3306',
     }
 }
 
@@ -113,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-eu'
 
 TIME_ZONE = 'UTC'
 
@@ -125,8 +130,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

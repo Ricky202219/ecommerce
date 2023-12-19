@@ -4,8 +4,10 @@ from .models import Producto, Categoria, Carrito, ItemCarrito, Pedido, DetallePe
 from django.urls import reverse
 from django.contrib.auth import login, logout, authenticate
 from .forms import RegistroForm, LoginForm
-from django.contrib import messages
 # Create your views here.
+
+def renderd(request):
+    return render(request, 'ddddd.html')
 
 def renderIndex(request):
     return render(request, 'home.html')
@@ -99,7 +101,7 @@ def crear_pedido(request):
     # Redirigir o renderizar a otra página según sea necesario
     #return redirect('/')
     # O renderizar una página confirmando el pedido
-    return render(request, 'home.html', {'pedido': pedido})
+    return redirect('/')
 
 
 def registro(request):

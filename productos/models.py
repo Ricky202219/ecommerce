@@ -16,6 +16,7 @@ class CustomUser(AbstractUser):
     user_permissions = models.ManyToManyField('auth.Permission', related_name='customuser_set')
     
 class Categoria(models.Model):
+    imagen = models.CharField(max_length=200)
     nombre = models.CharField(max_length=100)
     # Otros campos que necesites
     
@@ -23,6 +24,7 @@ class Categoria(models.Model):
         return self.nombre
 
 class Marca(models.Model):
+    imagen = models.CharField(max_length=200)
     nombre = models.CharField(max_length=100)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     # Otros campos que necesites
@@ -33,6 +35,7 @@ class Marca(models.Model):
 class Producto(models.Model):
     imagen = models.CharField(max_length=200)
     nombre = models.CharField(max_length=100)
+    categoria = models.ManyToManyField(Categoria)
     marca=models.ManyToManyField(Marca)
     precio = models.IntegerField()
     stock = models.IntegerField()

@@ -1,8 +1,16 @@
-from .models import Carrito, Categoria
+from .models import Carrito, Categoria, Producto, Marca
 
 def categorias(request):
     categorias = Categoria.objects.all()
-    return {'categorias': categorias}  
+    return {'categorias': categorias}
+
+def marcas(request):
+    marcas = Marca.objects.all()
+    return {'marcas': marcas}
+
+def productos(request):
+    productos = Producto.objects.all()
+    return {'productos': productos}
 
 # Importa tu modelo Carrito aquí
 
